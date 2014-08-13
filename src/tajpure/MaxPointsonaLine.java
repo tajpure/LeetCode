@@ -6,7 +6,6 @@ import java.util.Map;
 /**
  *
  * @author taojx
- * 
  */
 public class MaxPointsonaLine {
 	 public static int maxPoints(Point[] points) {
