@@ -5,7 +5,6 @@ import java.util.Stack;
 /**
  *
  * @author taojx
- * @version 创建时间：2014年8月13日 下午5:41:44
  */
 public class EvaluateReversePolishNotation {
 	

@@ -4,10 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author taojx
- * @version 创建时间：2014年8月13日 下午6:11:09
  * 
+ * @author taojx
  */
 public class MaxPointsonaLine {
 	 public static int maxPoints(Point[] points) {
@@ -47,7 +45,7 @@ public class MaxPointsonaLine {
 	 }
 	 
 	 public static void main(String[] args) {
-		 Point[] a = {new Point(1,1),new Point(1,1),new Point(2,2),new Point(2,2)};
-		 System.out.println(maxPoints(a));
+		 //Point[] a = {new Point(1,1),new Point(1,1),new Point(2,2),new Point(2,2)};
+		 System.out.println(1<<2);
 	 }
 }

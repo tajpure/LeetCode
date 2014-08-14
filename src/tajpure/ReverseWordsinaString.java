@@ -2,7 +2,6 @@ package tajpure;
 /**
  *
  * @author taojx
- * @version 创建时间：2014年8月11日 下午5:36:45
  */
 public class ReverseWordsinaString {
     public static String reverseWords(String s) {
