@@ -3,7 +3,7 @@ package tajpure;
  *
  * @author taojx
  */
-public class SortList {
+public class SortListII {
 	
 	 public static ListNode sortList(ListNode head) {
 		 if (head == null || head.next == null) {
