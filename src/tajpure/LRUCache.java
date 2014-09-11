@@ -1,0 +1,81 @@
+package tajpure;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class LRUCache {
+	
+	int capacity = 0;
+	
+	public class Entry {
+		public Entry() {};
+		public Entry(int key, int value) { this.key = key; this.value = value; }
+		public int key = -1;
+		public int value = -1;
+	}
+	
+	LinkedList<Entry> cache = new LinkedList<Entry>();
+	
+	public LRUCache(int capacity) {
+		this.capacity = capacity;
+		for (int i=0; i < capacity; i++) {
+			cache.addLast(new Entry());
+		}
+    }
+    
+    public int get(int key) {
+        for (Iterator<Entry> i = cache.iterator(); i.hasNext();) {
+        	Entry e = i.next();
+        	if (e.key == key) {
+        		cache.remove(e);
+        		cache.addFirst(e);
+        		return e.value;
+        	}
+        }
+    	return -1;
+    }
+    
+    public void set(int key, int value) {
+    	Entry e = new Entry(key, value);
+        if (capacity >= cache.size() && get(key) == -1) {
+        	cache.removeLast();
+        } else if (get(key) != -1) {
+        	remove(key);
+        }
+        cache.addFirst(e);
+    }
+    
+    public void remove(int key) {
+    	for (Iterator<Entry> i = cache.iterator(); i.hasNext();) {
+        	Entry e = i.next();
+        	if (e.key == key) {
+        		cache.remove(e);
+        		break;
+        	}
+        }
+    }
+    
+    public static void main(String[] args) {
+    	Scanner s = new Scanner(System.in);
+    	System.out.println("Input capacity:");
+    	String in = s.nextLine();
+    	LRUCache lru = new LRUCache(Integer.parseInt(in));
+    	while (!"E".equals(in)) {
+    		System.out.println("Input s or g:");
+    		in = s.nextLine();
+    		if ("s".equals(in)) {
+    		System.out.println("Input set:");
+    		in = s.nextLine();
+    		String[] str = in.split(" ");
+    		int key = Integer.parseInt(str[0]);
+    		int value = Integer.parseInt(str[1]);
+    		lru.set(key, value);
+    		} else {
+    		System.out.println("Input get:");
+    		in = s.nextLine();
+    		System.out.println(lru.get(Integer.parseInt(in)));
+    		}
+    	}
+    }
+}
