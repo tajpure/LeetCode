@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class LRUCache {
 	
-	int capacity = 0;
+	int curCapacity = 0;
+	int totalCapacity = 0;
 	
 	public class Entry {
 		public Entry() {};
@@ -18,10 +19,7 @@ public class LRUCache {
 	LinkedList<Entry> cache = new LinkedList<Entry>();
 	
 	public LRUCache(int capacity) {
-		this.capacity = capacity;
-		for (int i=0; i < capacity; i++) {
-			cache.addLast(new Entry());
-		}
+		this.totalCapacity = capacity;
     }
     
     public int get(int key) {
@@ -38,12 +36,15 @@ public class LRUCache {
     
     public void set(int key, int value) {
     	Entry e = new Entry(key, value);
-        if (capacity >= cache.size() && get(key) == -1) {
+        if (curCapacity >= totalCapacity && get(key) == -1) {
         	cache.removeLast();
+        	curCapacity--;
         } else if (get(key) != -1) {
         	remove(key);
+        	curCapacity--;
         }
         cache.addFirst(e);
+        curCapacity++;
     }
     
     public void remove(int key) {
