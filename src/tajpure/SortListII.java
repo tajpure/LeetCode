@@ -53,12 +53,12 @@ public class SortListII {
 			 current.next = head;
 			 head = current;
 		 }
-		 head = null;
+		 //head = null;
 		 head = sortList(head);
-//		 while (head.next != null) {
-//			 System.out.println(head.val);
-//			 head = head.next;
-//		 }
+		 while (head.next != null) {
+			 System.out.println(head.val);
+			 head = head.next;
+		 }
 		 System.out.println(head);
 	 }
 }
