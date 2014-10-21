@@ -4,6 +4,12 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+/**
+ * Should change the list to hashmap beacuse of the time limit
+ * @author taojx
+ *
+ */
+
 public class LRUCache {
 	
 	int curCapacity = 0;

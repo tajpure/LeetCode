@@ -1,4 +1,4 @@
-package com.taj;
+package tajpure;
 
 /**
  * Definition for singly-linked list.
@@ -16,7 +16,8 @@ public class InsertionSortList {
 	private static ListNode sortList = new ListNode(0);;
 	
     public static ListNode insertionSortList(ListNode head) {
-        ListNode curNode = head;
+        if (head == null) return null;
+    	ListNode curNode = head;
         
         while (curNode.next != null) {
         	ListNode node = new ListNode(curNode.val);
