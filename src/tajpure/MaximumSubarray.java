@@ -1,7 +1,7 @@
 package tajpure;
 
 /**		
- * auther: tajpure		
+ * @auther: tajpure		
 */		
 		
 public class MaximumSubarray {		
