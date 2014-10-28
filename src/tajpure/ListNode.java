@@ -7,4 +7,7 @@ public class ListNode {
 	         val = x;
 	         next = null;
 	     }
+	     public String toString() {
+	    	 return "val " + val;
+	     }
 }
