@@ -17,7 +17,6 @@ public class ReorderList {
 
 	    public static void reorderList(ListNode head) {
 	    	if (head == null) return;
-	    	Stack<ListNode> stack = new Stack<ListNode>();
 	    	ListNode fastP = head;
 	    	ListNode slowP = head;
 	    	while (fastP != null) {
@@ -27,18 +26,29 @@ public class ReorderList {
 	    			fastP = fastP.next;
 	    		}
 	    	}
+	    	slowP = reverse(slowP);
 	    	while (slowP != null) {
-	    		stack.push(slowP);
+	    		ListNode cur = slowP;
 	    		slowP = slowP.next;
-	    	}
-	    	while (!stack.empty()) {
-	    		ListNode cur = stack.pop();
 		    	ListNode last = head.next;
 	    		cur.next = last;
 	    		head.next = cur;
 	    		head = last;
 	    	}
 	    	head.next = null;
+	    }
+	    
+	    public static ListNode reverse(ListNode head) {
+	    	 if(head == null) return null;
+	         ListNode cur = head;
+	         ListNode nh = cur;
+	         while(cur.next != null){
+	             ListNode tmp = cur.next;
+	             cur.next = cur.next.next;
+	             tmp.next = nh;
+	             nh = tmp;
+	         }
+	         return nh;
 	    }
 	    
 	    public static void printList(ListNode head) {
@@ -57,7 +67,7 @@ public class ReorderList {
 	    		pre.next = cur;
 	    		pre = pre.next;
 	    	}
-	    	reorderList(null);
+	    	reorderList(head);
 	    	printList(head);
 	    }
 }
