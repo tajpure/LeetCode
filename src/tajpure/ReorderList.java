@@ -1,7 +1,5 @@
 package tajpure;
 
-import java.util.Stack;
-
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -39,16 +37,17 @@ public class ReorderList {
 	    }
 	    
 	    public static ListNode reverse(ListNode head) {
-	    	 if(head == null) return null;
-	         ListNode cur = head;
-	         ListNode nh = cur;
-	         while(cur.next != null){
-	             ListNode tmp = cur.next;
-	             cur.next = cur.next.next;
-	             tmp.next = nh;
-	             nh = tmp;
-	         }
-	         return nh;
+	    	if (head == null || head.next == null) return head;
+			ListNode top = head;
+			ListNode cur = head.next;
+			top.next = null;
+			while (cur != null) {
+				ListNode tmp = cur.next;
+				cur.next = top;
+				top = cur;
+				cur = tmp;
+			}
+			return top;
 	    }
 	    
 	    public static void printList(ListNode head) {

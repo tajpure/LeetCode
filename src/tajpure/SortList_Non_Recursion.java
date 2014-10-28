@@ -1,7 +1,6 @@
 package tajpure;
 
 /**
- * 单链表归并排序的非递归实现 时间复杂度 : O(nlogn) 空间复杂度 ： O(1)
  * @author taojx
  *
  */
