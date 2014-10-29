@@ -30,14 +30,14 @@ public class LinkedListCycleII {
 
 	public static void main(String[] args) {
 		ListNode head = new ListNode(0);
-//		ListNode cur = null;
-//		ListNode pre = head;
-//		for (int i = 1; i < 10; i++) {
-//			cur = new ListNode(i);
-//			pre.next = cur;
-//			pre = pre.next;
-//		}
-//		pre.next = head.next;
+		ListNode cur = null;
+		ListNode pre = head;
+		for (int i = 1; i < 10; i++) {
+			cur = new ListNode(i);
+			pre.next = cur;
+			pre = pre.next;
+		}
+		pre.next = head.next;
 		System.out.println(detectCycle(head));
 	}
 }
