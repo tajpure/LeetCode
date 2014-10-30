@@ -2,14 +2,20 @@ package tajpure;
 
 import java.util.HashMap;
 
-
 /**
+ * time:O(n) memory:O(n) 
+ * @author taojx
  * Definition for singly-linked list with a random pointer.
  * class RandomListNode {
  *     int label;
  *     RandomListNode next, random;
  *     RandomListNode(int x) { this.label = x; }
  * };
+ * 
+ * Here is another way(time:O(n) memory:O(1)) to be accepted from the discuss from LeetCode:
+ * Step 1: create a new node for each existing node and join them together eg: A->B->C will be A->A'->B->B'->C->C'
+ * Step 2: copy the random links: for each new node n', n'.random = n.random.next
+ * Step 3: detach the list: basically n.next = n.next.next; n'.next = n'.next.next
  */
 public class CopyListwithRandomPointer {
 
