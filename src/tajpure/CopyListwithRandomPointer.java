@@ -20,12 +20,12 @@ public class CopyListwithRandomPointer {
 	        RandomListNode curCopy = headCopy;
 	        HashMap<RandomListNode,RandomListNode> copyTable = new HashMap<RandomListNode,RandomListNode>();
 	        while (curNode != null) {		// copy next
-	        	RandomListNode tmp = curNode.next;
-	        	if (tmp != null) {
-	        		curCopy.next = new RandomListNode(tmp.label);
+	        	RandomListNode temp = curNode.next;
+	        	if (temp != null) {
+	        		curCopy.next = new RandomListNode(temp.label);
 	        	}
 	        	copyTable.put(curNode, curCopy);
-	        	curNode = tmp;
+	        	curNode = temp;
 	        	curCopy = curCopy.next;
 	        }
 	        curNode = head;
