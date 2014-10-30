@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * time:O(n) memory:O(n) 
- * @author taojx
+ * 
  * Definition for singly-linked list with a random pointer.
  * class RandomListNode {
  *     int label;
