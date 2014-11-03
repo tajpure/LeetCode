@@ -13,7 +13,7 @@ package tajpure;
  */
 public class InsertionSortList {
 	
-	private static ListNode sortList = new ListNode(0);;
+	private static ListNode sortList = new ListNode(0);
 	
     public static ListNode insertionSortList(ListNode head) {
         if (head == null) return null;
