@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
+ * time:O(n) memory:O(n) 
  * Definition for binary tree
  * public class TreeNode {
  *     int val;
