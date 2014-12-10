@@ -1,7 +1,6 @@
 package tajpure;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 
 
 public class TwoSum {
