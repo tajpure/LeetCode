@@ -17,7 +17,7 @@ public class FindPeakElement {
 	}
 	
 	public static void main(String[] args) {
-		int[] num = {1,2,3,1};
+		int[] num = {1,2,1,2,3,4};
 		System.out.println(findPeakElement(num));
 	}
 }
