@@ -17,29 +17,30 @@ package tajpure;
 public class MedianofTwoSortedArraysI {
 	
 	public static double findMedianSortedArrays(int A[], int B[]) {
-		int m = A.length;
-		int n = B.length;
-		return medianSearch(A, B, Math.max(1, (m+n)/2-n), Math.min(m, (m+n)/2));
-	}
-	
-	public static double medianSearch(int A[], int B[], int left, int right) {
-		int m = A.length;
-		int n = B.length;
-		if (left > right) return medianSearch(B, A, Math.max(1, (m+n)/2-m), Math.min(n, (m+n)/2));
-		int i = (left+right)/2;
-		int j = (m+n)/2-i;
-		if ((j == 0 || A[i] > B[j]) && (j == n || A[i] <= B[j+1])) {
-			return A[i];
-		} else if((j == 0 || A[i] > B[j]) && j != n && A[i] > B[j+1]) {
-			return medianSearch(A, B, left, i-1);
-		} else {
-			return medianSearch(A, B, i+1, right);
+		int m = A.length, n = B.length;
+		double result = 0;
+		if (m > n) return findMedianSortedArrays(B, A);
+		int k = (m + n - 1) / 2;
+		int left = 0, right = Math.min(m, k);
+		while (left < right) {
+			int i = (left + right) / 2;
+			int j = k - i;
+			if (A[i] < B[j]) {
+				left = i + 1;
+			} else {
+				right = i;
+			}
 		}
+		result = Math.max(left > 0 ? A[left - 1] : Integer.MIN_VALUE, k - left >= 0 ? B[k - left] : Integer.MIN_VALUE);
+		if (((m + n) & 1) == 1)  return result;
+		else result = (result + Math.min(left < m ? A[left] : Integer.MAX_VALUE, k - left + 1 < n ? 
+				B[k - left + 1] : Integer.MAX_VALUE)) / 2;
+		return result;
 	}
 	
 	public static void main(String[] args) {
-		int[] A = {2,4,6,32,38};
-		int[] B = {1,2,3,4,5};
+		int[] B = {1,3};
+		int[] A = {2};
 		System.out.println(findMedianSortedArrays(A, B));
 	}
 }

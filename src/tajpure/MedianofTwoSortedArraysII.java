@@ -21,6 +21,7 @@ public class MedianofTwoSortedArraysII {
 		while (l < r) {
 			int midA = (l + r) / 2;
 			int midB = k - midA;
+			System.out.println(midA+" "+midB);
 			if (A[midA] < B[midB])
 				l = midA + 1;
 			else
@@ -48,8 +49,8 @@ public class MedianofTwoSortedArraysII {
 	}
 	
 	public static void main(String[] args) {
-		int[] A = {1,3,5,7,9,12,22};
-		int[] B = {2,4,6,8};
+		int[] B = {2,3};
+		int[] A = {1};
 		System.out.println(findMedianSortedArrays(A, B));
 	}
 }
