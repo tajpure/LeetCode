@@ -4,7 +4,7 @@ package tajpure;
  * The problem doesn't belong to the problem list of the LeetCode. Description:
  * There are four women want to cross the brige. The time their will cost
  * respectively is 1,2,5,10 min, And the brige just permits two women to cross
- * each time. Please use 17 min, let their cross the brige.
+ * each time. Please use 17 min, let them cross the brige.
  * 
  * @author taojx
  * 
